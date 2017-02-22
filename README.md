@@ -14,7 +14,8 @@ It's a simple start menu with two options
 ### Difficulty screen#
 Four dificulty levels
 
-1)Facil (easy)#
+1)Facil (easy)
+
 2)Normal
 
 3)Dificil (Hard, I recommend this)
