@@ -1,4 +1,4 @@
-# Snake-V2.0
+﻿# Snake-V2.0
 
 ## The simple snake-game in console made with C/C++.
 
@@ -14,7 +14,7 @@ It's a simple start menu with two options
 2) Difficulty level (select the sifficulty of game)
 
 
-### Difficulty screen#
+### Difficulty screen
 Four dificulty levels
 
 ![Alt text](https://github.com/CreyTuning/Snake-V2.0/blob/master/Images/5.PNG?raw=true "Main Menu")
@@ -27,6 +27,13 @@ Four dificulty levels
 3) Dificil (Hard, I recommend this)
 
 4) Modo destrucción (IMPOSSIBLE)
+
+### Game screnn
+it's a simple game screen made with charters
+
+![Alt text](https://github.com/CreyTuning/Snake-V2.0/blob/master/Images/5.PNG?raw=true "Main Menu")
+
+A difficulty level and score indicator appear on the screen
 
 ##Download for Windows: 
 https://github.com/CreyTuning/Snake-V2.0/raw/master/Releases/windows_64-32/Snake_V2.0.exe
