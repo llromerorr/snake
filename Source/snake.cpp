@@ -30,95 +30,98 @@ int Durabilidad =0;
     
 //FUNCIONES
     void gotoxy(int x, int y){
-            HANDLE hCon;
-            hCon = GetStdHandle(STD_OUTPUT_HANDLE);
+        HANDLE hCon;
+        hCon = GetStdHandle(STD_OUTPUT_HANDLE);
 
-            COORD dwPos;
-            dwPos.X = x;
-            dwPos.Y = y;
-            SetConsoleCursorPosition(hCon, dwPos);
+        COORD dwPos;
+        dwPos.X = x;
+        dwPos.Y = y;
+        SetConsoleCursorPosition(hCon, dwPos);
     }
         
     void OcultaCursor(){
-            CONSOLE_CURSOR_INFO cci = {100, FALSE};
-            SetConsoleCursorInfo(GetStdHandle(STD_OUTPUT_HANDLE), &cci);
+        CONSOLE_CURSOR_INFO cci = {100, FALSE};
+        SetConsoleCursorInfo(GetStdHandle(STD_OUTPUT_HANDLE), &cci);
     }
 
     void Cambio_de_Pantalla(){
-            for (int i = 1; i <= 2; i++){                                //Efecto de Intro
-                for (int yIntro = 1; yIntro <= 25; yIntro++){
-                    for (int i = 1; i <= 60; i++){
-                        y = yIntro ;
-                        gotoxy(i, yIntro);
-                        printf("%c", 219);
-                    }
-                    Sleep(1);
+        for (int i = 1; i <= 2; i++){                                //Efecto de Intro
+            for (int yIntro = 1; yIntro <= 25; yIntro++){
+                for (int i = 1; i <= 60; i++){
+                    y = yIntro ;
+                    gotoxy(i, yIntro);
+                    printf("%c", 219);
                 }
-
-                for (int yIntro2 = 1; yIntro2 <= 25; yIntro2++){
-                    for (int i = 1; i <= 60; i++){
-                        y = yIntro2 ;
-                        gotoxy(i, yIntro2);
-                        printf(" ");
-                    }
-                    Sleep(1);
-                }
+                Sleep(1);
             }
-    }
 
-    void Cambio_de_Pantalla_Corto(){
-            for (int i = 1; i <= 1; i++){                                //Efecto de Intro
-                for (int yIntro = 1; yIntro <= 25; yIntro++){
-                    for (int i = 1; i <= 60; i++){
-                        y = yIntro ;
-                        gotoxy(i, yIntro);
-                        printf("%c", 219);
-                    }
-                    Sleep(1);
-                }
-
-                for (int yIntro2 = 1; yIntro2 <= 25; yIntro2++)
-                    {
-                    for (int i = 1; i <= 60; i++){y = yIntro2 ;gotoxy(i, yIntro2);printf(" ");}
-                    Sleep(1);
-                    }
-            }
-    }
-
-    void Limpiar_Pantalla(){
             for (int yIntro2 = 1; yIntro2 <= 25; yIntro2++){
                 for (int i = 1; i <= 60; i++){
                     y = yIntro2 ;
                     gotoxy(i, yIntro2);
                     printf(" ");
                 }
-                Sleep(10);
+                Sleep(1);
             }
+        }
+    }
+
+    void Cambio_de_Pantalla_Corto(){
+        for (int i = 1; i <= 1; i++){                                //Efecto de Intro
+            for (int yIntro = 1; yIntro <= 25; yIntro++){
+                for (int i = 1; i <= 60; i++){
+                    y = yIntro ;
+                    gotoxy(i, yIntro);
+                    printf("%c", 219);
+                }
+                Sleep(1);
+            }
+
+            for (int yIntro2 = 1; yIntro2 <= 25; yIntro2++){
+                for (int i = 1; i <= 60; i++){
+                	y = yIntro2 ;
+                	gotoxy(i, yIntro2);
+                	printf(" ");
+                }
+                Sleep(1);
+            }
+        }
+    }
+
+    void Limpiar_Pantalla(){
+        for (int yIntro2 = 1; yIntro2 <= 25; yIntro2++){
+            for (int i = 1; i <= 60; i++){
+                y = yIntro2 ;
+                gotoxy(i, yIntro2);
+                printf(" ");
+            }
+            Sleep(10);
+        }
     }
 
     void Probar_Teclas(){
-            char q;
-            while (Game_Over==false){
-                if(kbhit()){
-                    q=getch();
-                    printf("%d",q);
-                }
+        char q;
+        while (Game_Over==false){
+            if(kbhit()){
+                q=getch();
+                printf("%d",q);
             }
+        }
     }
 
     void Pintar_Cuerpo(){
-            gotoxy(CabezaX,CabezaY);
-            printf("o");                                           //IMPRIMRIR CABEZA        
+        gotoxy(CabezaX,CabezaY);
+        printf("o");                                           //IMPRIMRIR CABEZA        
     }
 
     void tocar_boton(){
-            if(kbhit()){
-                boton=getch();                                      //CAMBIAR DIRECCION AL TOCAR BOTON
-                if (boton==ARRIBA && dir!=3) dir = 1;
-                else if (boton==DERECHA && dir!=4) dir = 2;
-                else if (boton==ABAJO && dir!=1) dir = 3;
-                else if (boton==IZQUIERDA && dir!=2) dir = 4;
-            }
+        if(kbhit()){
+            boton=getch();                                      //CAMBIAR DIRECCION AL TOCAR BOTON
+            if (boton==ARRIBA && dir!=3) dir = 1;
+            else if (boton==DERECHA && dir!=4) dir = 2;
+            else if (boton==ABAJO && dir!=1) dir = 3;
+            else if (boton==IZQUIERDA && dir!=2) dir = 4;
+        }
     }
         
     void Almacenar_Cuerpo(){
@@ -163,19 +166,19 @@ int Durabilidad =0;
     }
 
     void Comida_Generador (){
-            if(ComidaX == CabezaX && ComidaY == CabezaY){
-                ComidaX = (rand() % 57) + 2;
-                ComidaY = (rand() % 17) + 7;
-                tam++;
-                gotoxy(ComidaX,ComidaY);
-                printf("%c", 254);
-                point=point+10;
-            }
+        if(ComidaX == CabezaX && ComidaY == CabezaY){
+            ComidaX = (rand() % 57) + 2;
+            ComidaY = (rand() % 17) + 7;
+            tam++;
+            gotoxy(ComidaX,ComidaY);
+            printf("%c", 254);
+            point=point+10;
+        }
 
-            else{
-                gotoxy(ComidaX,ComidaY);
-                printf("%c", 254);
-            }
+        else{
+            gotoxy(ComidaX,ComidaY);
+            printf("%c", 254);
+        }
     }
 
     void Movimiento_Automatico(){
@@ -197,7 +200,6 @@ int Durabilidad =0;
         }
 
         Durabilidad_Contador=Durabilidad_Contador+5;
-
         if(Durabilidad_Contador>=0){
             gotoxy(30,1);cout<<"                ";
             Durabilidad++;
