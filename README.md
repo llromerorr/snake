@@ -22,3 +22,6 @@ Four dificulty levels
 3)Dificil (Hard, I recommend this)
 
 4)Modo destrucción (IMPOSSIBLE)
+
+##Download Windows: 
+https://github.com/CreyTuning/Snake-V2.0/raw/master/Releases/windows_64-32/Snake_V2.0.exe
