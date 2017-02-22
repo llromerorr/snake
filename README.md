@@ -31,7 +31,7 @@ Four dificulty levels
 ### Game screnn
 it's a simple game screen made with charters
 
-![Alt text](https://github.com/CreyTuning/Snake-V2.0/blob/master/Images/5.PNG?raw=true "Main Menu")
+![Alt text](https://github.com/CreyTuning/Snake-V2.0/blob/master/Images/2.PNG?raw=true "Main Menu")
 
 A difficulty level and score indicator appear on the screen
 
