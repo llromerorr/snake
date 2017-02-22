@@ -15,9 +15,6 @@ It's a simple start menu with two options
 Four dificulty levels
 
 1)Facil (easy)
-
 2)Normal
-
 3)Dificil (Hard, I recommend this)
-
 4)Modo destrucción (IMPOSSIBLE)
