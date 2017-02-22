@@ -12,9 +12,12 @@ It's a simple start menu with two options
 2)Difficulty level (select the sifficulty of game)
 
 ### Difficulty screen
-Four dificulty levels
+## Four dificulty levels
 
 1)Facil (easy)
+
 2)Normal
+
 3)Dificil (Hard, I recommend this)
+
 4)Modo destrucción (IMPOSSIBLE)
