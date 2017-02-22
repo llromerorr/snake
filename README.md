@@ -4,7 +4,7 @@
 
 
 ### Start menu
-![]({{site.baseurl}}/https://github.com/CreyTuning/Snake-V2.0/blob/master/Images/1.PNG)
+https://github.com/CreyTuning/Snake-V2.0/blob/master/Images/1.PNG
 
 It's a simple start menu with two options
 1)Start the game (run the game)
