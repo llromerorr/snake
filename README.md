@@ -1,6 +1,4 @@
-﻿# Snake-V2.0
-
-## The simple snake-game in console made with C/C++.
+﻿## The simple snake-game in console made with C/C++.
 
 
 ### Start menu
