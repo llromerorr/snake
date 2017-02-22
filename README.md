@@ -4,8 +4,8 @@
 
 
 ### Start menu
-![Alt text](master/Images/1.PNG?raw=true "Optional Title")
-master/Images/1.PNG
+![Alt text](https://github.com/CreyTuning/Snake-V2.0/blob/master/Images/1.PNG?raw=true "Optional Title")
+https://github.com/CreyTuning/Snake-V2.0/blob/master/Images/1.PNG
 It's a simple start menu with two options
 
 1) Start the game (run the game)
