@@ -12,6 +12,8 @@ It's a simple start menu with two options
 
 2)Difficulty level (select the sifficulty of game)
 
+
+
 ### Difficulty screen#
 Four dificulty levels
 
