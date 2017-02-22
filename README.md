@@ -4,7 +4,6 @@
 
 
 ### Start menu
-![]({{site.baseurl}}/Images/1.pmg)
 
 It's a simple start menu with two options
 
