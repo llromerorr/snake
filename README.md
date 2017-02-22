@@ -15,7 +15,7 @@ It's a simple start menu with two options
 
 
 ### Difficulty screen
-Four dificulty levels
+Four difficulty levels
 
 ![Alt text](https://github.com/CreyTuning/Snake-V2.0/blob/master/Images/5.PNG?raw=true "Main Menu")
 
