@@ -414,12 +414,3 @@ int Durabilidad =0;
                 case 1: Menu_Dificultad(); break;
             }
     }
-
-int main(){
-    int Repeat = 1;
-    while(Repeat=1){
-        system ("color 3f");
-        Menu_Principal();
-    }
-    return 0;
-}
