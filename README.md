@@ -1,6 +1,6 @@
 ﻿# Snake-V2.0
 
-## The simple snake-game in console made with C/C++.
+## The simple conole snake-game made with C/C++.
 
 
 ### Start menu
@@ -35,5 +35,5 @@ it's a simple game screen made with charters
 
 A difficulty level and score indicator appear on the screen
 
-##Download for Windows: 
+##Download for Windows
 https://github.com/CreyTuning/Snake-V2.0/raw/master/Releases/windows_64-32/Snake_V2.0.exe
