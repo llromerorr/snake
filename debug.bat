@@ -5,4 +5,4 @@
 windres Resource/icon.rc Resource/icon.o
 
 ::compile the game
-cls && g++ -Wall Source/main.cpp Source/Levels.cpp Resource/icon.o -static -o Build/Debug.exe && start Build/Debug.exe
+cls && g++ -Wall Source/main.cpp Source/Levels.cpp Resource/icon.o -o Build/Debug.exe && start Build/Debug.exe
