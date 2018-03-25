@@ -1,0 +1,1 @@
+windres Resource/icon.rc Resource/icon.o && g++ main.cpp miniwin.cpp Resource/icon.o -mwindows -o Snak3

@@ -1,26 +1,32 @@
 ﻿# Snake
 
-## Simple snake-game made with C/C++.
+## Snake Game with MiniWin (by @pauek) and C++.
 
+it's just a simple graphical snake game
 
 ### Start menu
 
-1) Start the game (run the game)
+1) Play (start game)
 
-2) Difficulty level (select the sifficulty of game)
+2) Difficulty level (change game difficulty)
 
+3) My Snake (change snake color)
 
-### Difficulty screen
-Four difficulty levels
+4) Exit (close the game)
 
-1) Facil (easy)
+### Difficulty levels
 
-2) Normal
+1) Worm (easy)
 
-3) Dificil (Hard, I recommend this)
+2) Snake (normal)
 
-4) Modo destrucción (IMPOSSIBLE)
+3) Anaconda (hard)
 
-##Download for Windows
+### MiniWin
+
+https://github.com/pauek/MiniWin
+https://twitter.com/pauek [creator]
+
+### Download for Windows
 
 https://github.com/CreyTuning/Snake/releases
