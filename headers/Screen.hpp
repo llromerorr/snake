@@ -1,7 +1,7 @@
 #ifndef _SCREEN_H_
 #define _SCREEN_H_
 
-#include "../miniwin.h"
+#include "miniwin.h"
 #include "Pixel.hpp"
 #include "Root.hpp"
 
@@ -13,6 +13,7 @@ class Screen
     int width = 200, height = 200;
     int pixelSize = 20;
     int pixelByX = 10, pixelByY = 10;
+    float updateSpeed = 60;
     Color BackgroundColor = Color(100, 100, 100);
 
     public:
@@ -64,7 +65,7 @@ class Screen
     }
 
     void clear ( ) { miniwin :: borra(); }
-    void update ( ) { miniwin :: refresca(); }
+    void update ( ) { miniwin :: refresca(); miniwin :: espera(this->updateSpeed);}
     void update ( float millisecods ) { miniwin :: refresca(); miniwin :: espera(millisecods); }
     void wait (float millisecods) { miniwin :: espera(millisecods); }
     void close ( ) { vcierra(); }

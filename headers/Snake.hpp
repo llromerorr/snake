@@ -3,9 +3,12 @@
 
 #include "Pixel.hpp"
 #include "HandleInput.hpp"
+#include "Root.hpp"
 #include <vector>
 #include "Screen.hpp"
+#include "random.hpp"
 
+using Random = effolkronium::random_static;
 using namespace std;
 
 class Snake
@@ -13,20 +16,21 @@ class Snake
     Color headColor = Color (33,150,243);
     Color bodyColor = Color (255, 255, 255);
     Screen screen = Screen(200, 200);
-    vector<Pixel> body;
-    int direction = 1;
+    int direction = Random::get(0, 3);
     float speed = 0;
-    int size = 12;
+    Position headPosition = Position(0, 0);
+    int size = Random::get(3, 12);
+    vector<Pixel> body;
 
     public:
 
-    Snake ( ) { }
     Snake ( Screen screen ) { this->screen = screen; }
     Snake ( Screen screen, int direction ) { this->screen = screen; this->direction = direction; }
     Snake ( Screen screen, int direction, float speed ) { this->screen = screen; this->direction = direction; this->speed = speed; }
     Snake ( Screen screen, int direction, float speed, Color headColor ) { this->screen = screen; this->direction = direction; this->speed = speed; this->headColor = headColor; }
 
     void setScreen(Screen screen){ this->screen = screen; }
+    void setHeadPosition(int x, int y) { this->headPosition.setx(x * this->size); this->headPosition.sety(y * this->size); }
     void setHeadColor ( Color color ) { this->headColor = color; }
     void setBodyColor ( Color color )
     {
@@ -35,27 +39,43 @@ class Snake
             body[i].setColor(color);
     }
 
-    void init(int x, int y)
+    void init()
     {
         body.resize(this->size);
-        for(int i = 0; i < body.size(); i++, x--)
-        {
-            body[i] = Pixel(x, y);
-            body[i].setColor(this->bodyColor);
-        }
-
+        body.front().setPosition(this->headPosition.getx(), this->headPosition.getx());
         body.front().setColor(this->headColor);
-    }
 
-    void init(int x, int y, int direction)
-    {
-        this->direction = direction;
-
-        body.resize(this->size);
-        for(int i = 0; i < body.size(); i++, x--)
-            body[i] = Pixel(x, y);
-
-        body.front().setColor(Color(33,150,243));
+        switch(this->direction)
+        {
+            case 0:
+                for(int i = 1, y = this->headPosition.gety(); i < body.size(); i++, y++)
+                {
+                    body[i] = Pixel(this->headPosition.getx(), y);
+                    body[i].setColor(this->bodyColor);
+                }
+                break;
+            case 1:
+                for(int i = 1, x = this->headPosition.getx(); i < body.size(); i++, x--)
+                {
+                    body[i] = Pixel(x, this->headPosition.gety());
+                    body[i].setColor(this->bodyColor);
+                }
+                break;
+            case 2:
+                for(int i = 1, y = this->headPosition.gety(); i < body.size(); i++, y--)
+                {
+                    body[i] = Pixel(this->headPosition.getx(), y);
+                    body[i].setColor(this->bodyColor);
+                }
+                break;
+            case 3:
+                for(int i = 1, x = this->headPosition.getx(); i < body.size(); i++, x++)
+                {
+                    body[i] = Pixel(x, this->headPosition.gety());
+                    body[i].setColor(this->bodyColor);
+                }
+                break;
+        }
     }
 
     void update()

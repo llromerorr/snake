@@ -24,7 +24,7 @@
 #include <windowsx.h>
 
 #define MINIWIN_SOURCE
-#include "miniwin.h"
+#include "headers/miniwin.h"
 
 LRESULT CALLBACK WindowProcedure (HWND, UINT, WPARAM, LPARAM);
 
@@ -520,7 +520,7 @@ void vcierra() {
 using namespace std;
 
 #define MINIWIN_SOURCE
-#include "miniwin.h"
+#include "headers/miniwin.h"
 
 // Globals ///////////////////////////////////////////////////////////
 
@@ -916,7 +916,7 @@ void espera(int miliseg) {
 
 #else
 
-#error "MiniWin no funciona en esta plataforma"
+// #error "MiniWin no funciona en esta plataforma"
 
 #endif
 

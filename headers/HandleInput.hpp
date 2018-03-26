@@ -1,7 +1,7 @@
 #ifndef _HANDLE_INPUT_
 #define _HANDLE_INPUT_
 
-#include "../miniwin.h"
+#include "miniwin.h"
 using namespace miniwin;
 
 class HandleInput

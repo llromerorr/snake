@@ -1,7 +1,7 @@
 #ifndef _PIXEL_H_
 #define _PIXEL_H_
 
-#include "../miniwin.h"
+#include "miniwin.h"
 #include "Root.hpp"
 
 using namespace Root;

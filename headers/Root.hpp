@@ -1,7 +1,7 @@
 #ifndef _ROOT_H_
 #define _ROOT_H_
 
-#include "../miniwin.h"
+#include "miniwin.h"
 
 using namespace miniwin;
 
