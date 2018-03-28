@@ -6,7 +6,7 @@
         {
             "label": "build",
             "type": "shell",
-            "command": "windres Resource/icon.rc Resource/icon.o && g++ main.cpp miniwin.cpp Resource/icon.o -mwindows -o program && program",
+            "command": "windres Resource/icon.rc Resource/icon.o && g++ -static main.cpp miniwin.cpp Resource/icon.o -mwindows -o program && program",
             "problemMatcher": []
         }
     ]

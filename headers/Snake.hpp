@@ -7,6 +7,7 @@
 #include <vector>
 #include "Screen.hpp"
 #include "random.hpp"
+#include "FoodGenerator.hpp"
 
 using Random = effolkronium::random_static;
 using namespace std;
@@ -20,7 +21,7 @@ class Snake
     float speed = 0;
     Position headPosition = Position(0, 0);
     int size = Random::get(3, 12);
-    vector<Pixel> body;
+    vector<Pixel> body = vector<Pixel>(3);
 
     public:
 
@@ -29,8 +30,12 @@ class Snake
     Snake ( Screen screen, int direction, float speed ) { this->screen = screen; this->direction = direction; this->speed = speed; }
     Snake ( Screen screen, int direction, float speed, Color headColor ) { this->screen = screen; this->direction = direction; this->speed = speed; this->headColor = headColor; }
 
+    void draw() { for(int i = 0; i < body.size(); i++) body[i].draw(); }
+    void drawHead ( ) { this->body.front().draw(); }
+    void setDirection ( int direction) { this->direction = direction; }
     void setScreen(Screen screen){ this->screen = screen; }
-    void setHeadPosition(int x, int y) { this->headPosition.setx(x * this->size); this->headPosition.sety(y * this->size); }
+    void setSize ( int size ) { this->size = size; }
+    void setHeadPosition(int x, int y) { this->headPosition.setx(x * this->body.front().getSize()); this->headPosition.sety(y * this->body.front().getSize()); }
     void setHeadColor ( Color color ) { this->headColor = color; }
     void setBodyColor ( Color color )
     {
@@ -39,10 +44,28 @@ class Snake
             body[i].setColor(color);
     }
 
+    void eat ( )
+    {
+        if(this->body.front().getPixelPositionX() == FoodGenerator :: getPosition().getx() && this->body.front().getPixelPositionY() == FoodGenerator :: getPosition().gety() )
+        {
+            this->size++;
+            body.resize(this->size);
+            body[this->size - 1] = Pixel(this->body[size - 2].getPositionByPixel());
+            FoodGenerator :: init();
+        }   
+    }
+    
+    bool bodyCollision ( )
+    {
+        for(int i = body.size() - 1; i > 0; i--)
+            if(this->body.front().getPixelPositionX() == body[i].getPosition().getx() && this->body.front().getPixelPositionY() == body[i].getPosition().gety())
+                return true;
+    }
+
     void init()
     {
         body.resize(this->size);
-        body.front().setPosition(this->headPosition.getx(), this->headPosition.getx());
+        body.front().setPosition(this->headPosition.getx(), this->headPosition.gety());
         body.front().setColor(this->headColor);
 
         switch(this->direction)
@@ -78,7 +101,7 @@ class Snake
         }
     }
 
-    void update()
+    bool update()
     {
         if(HandleInput :: getKey() == ARRIBA && this->direction != 2)
             this->direction = 0;
@@ -125,9 +148,16 @@ class Snake
                 break;
         }
 
+        this->eat();
+
         //draw snake
         for(int i = 0; i < body.size(); i++)
             body[i].draw();
+        
+        if(this->bodyCollision())
+            return 1;
+        else
+            return 0;
     }
 };
 

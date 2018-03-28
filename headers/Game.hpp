@@ -5,6 +5,7 @@
 #include "Screen.hpp"
 #include "Snake.hpp"
 #include "HandleInput.hpp"
+#include "FoodGenerator.hpp"
 
 class Game
 {
@@ -12,6 +13,7 @@ class Game
     bool gameOver = false;
     Screen screen = Screen(640, 480);
     Snake player = Snake(screen);
+    FoodGenerator food = FoodGenerator(screen);
 
     public:
     Game ( ) { }
@@ -29,24 +31,6 @@ int Game::keyboardInput()
         case ESCAPE:
             if(pregunta("Do you want to exit?"))
                 this->gameOver = true;
-            break;
-        case ESPACIO:
-            this->start();
-            break;
-        case F1:
-            if(refresh < 90)
-                refresh += 30;
-            break;
-        case F2:
-            if(refresh > 30)   
-                refresh -= 30;
-            break;
-        case F3:
-            this->screen.setColorBackground(Color(200, 10, 45));
-            break;
-        case F4:
-            this->screen.setColorBackground(Color(38, 50, 56));
-            break;
     }
 }
 
@@ -55,18 +39,42 @@ void Game::init()
     this->screen.init();
     screen.setColorBackground(Color(38,50,56));
 
+    this->player.setHeadPosition(Random::get(0, this->screen.getPixelByX() - 1), Random::get(0, this->screen.getPixelByY() - 1));
+    this->player.setSize(Random::get(3, 5));
+    this->player.setDirection(Random::get(0, 3));
+    this->player.setHeadColor(Color(33,150,243));
     this->player.init();
+    this->food.init();
 }
 
 void Game::start()
-{
-    this->init();
-    
+{   
     while(!this->gameOver)
     {
         keyboardInput();
         this->screen.drawBackgroud();
-        this->player.update();
+        this->food.update();
+
+        // head-body collision
+        if(this->player.update())
+        {
+            this->screen.setColorBackground(Color(200, 10, 45));
+            this->screen.drawBackgroud();
+            this->player.draw();
+            this->player.drawHead();
+            this->screen.update();
+            if (!miniwin :: pregunta("Game Over, do you want to try again?"))
+            {
+                this->gameOver = true;
+                break;
+            }
+            else
+            {
+                this->init();
+                continue;
+            }
+        }
+
         this->screen.update(refresh);
     }
 

@@ -15,6 +15,7 @@ class Pixel
     public:
     Pixel(void) { }
     Pixel(Color color) { this->color = color; }
+    Pixel(Color color, Position position) { this->color = color; this->setX(position.getx()); this->setY(position.gety()); }
     Pixel(Color color, int size) { this->color = color; this->size = size; }
     Pixel(Color color, int size, Position position) { this->color = color; this->size = size; this->setX(position.getx()); this->setY(position.gety()); }
     Pixel(Position position) { this->setX(position.getx()); this->setY(position.gety()); }
@@ -40,6 +41,7 @@ class Pixel
     int getSize(){return this->size;}
     Color getColor() { return this->color; }
     Position getPosition() { return Position(this->x, this->y); }
+    Position getPositionByPixel() { return Position(this->x / this->size, this->y / this->size); }
 
     void draw(void)
     {
