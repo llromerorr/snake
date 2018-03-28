@@ -4,6 +4,8 @@
 
 it's just a simple graphical snake game
 
+![alt text](https://github.com/CreyTuning/snake/blob/master/Resource/img1.gif)
+
 ### Start menu
 
 1) Play (start game)
