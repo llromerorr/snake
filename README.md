@@ -27,6 +27,7 @@ it's just a simple graphical snake game
 ### MiniWin
 
 https://github.com/pauek/MiniWin
+
 https://twitter.com/pauek [creator]
 
 ### Download for Windows
