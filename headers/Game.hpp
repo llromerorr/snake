@@ -44,7 +44,7 @@ void Game::init()
     this->player.setDirection(Random::get(0, 3));
     this->player.setHeadColor(Color(33,150,243));
     this->player.init();
-    this->food.init();
+    this->food.init(this->player.getBodyVector(), this->player.getHeadPosition());
 }
 
 void Game::start()

@@ -30,6 +30,9 @@ class Snake
     Snake ( Screen screen, int direction, float speed ) { this->screen = screen; this->direction = direction; this->speed = speed; }
     Snake ( Screen screen, int direction, float speed, Color headColor ) { this->screen = screen; this->direction = direction; this->speed = speed; this->headColor = headColor; }
 
+    vector<Pixel> getBodyVector() { return this->body; }
+    Position getHeadPosition() { return this->headPosition; }
+
     void draw() { for(int i = 0; i < body.size(); i++) body[i].draw(); }
     void drawHead ( ) { this->body.front().draw(); }
     void setDirection ( int direction) { this->direction = direction; }
@@ -51,7 +54,7 @@ class Snake
             this->size++;
             body.resize(this->size);
             body[this->size - 1] = Pixel(this->body[size - 2].getPositionByPixel());
-            FoodGenerator :: init();
+            FoodGenerator :: init(body, headPosition);
         }   
     }
     
