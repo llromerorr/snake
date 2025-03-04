@@ -116,7 +116,7 @@ int WINAPI WinMain (HINSTANCE hThisInstance,
     hWnd = CreateWindowEx (
       0,                   /* Extended possibilites for variation */
       szClassName,         /* Classname */
-      "Snake 3 by CreyTuning [beta 1]",           /* Title Text */
+      "Snake 3 by Luis Romero",           /* Title Text */
       WS_OVERLAPPEDWINDOW, /* default window */
       CW_USEDEFAULT,       /* Windows decides the position */
       CW_USEDEFAULT,       /* where the window ends up on the screen */
