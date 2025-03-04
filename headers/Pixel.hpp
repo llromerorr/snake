@@ -30,8 +30,8 @@ class Pixel
     int getPixelPositionX () { return this->x; }
     int getPixelPositionY () { return this->y; }
 
-    int setX (int x) { this->x = (this->size * x); }
-    int setY (int y) { this->y = (this->size * y); }    
+    void setX (int x) { this->x = (this->size * x); }
+    void setY (int y) { this->y = (this->size * y); }    
     int getX () { return this->x / this->size; }
     int getY () { return this->y / this->size; }
 

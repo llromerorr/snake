@@ -17,12 +17,12 @@ class Game
 
     public:
     Game ( ) { }
-    int keyboardInput();
+    void keyboardInput();
     void init();
     void start();
 };
 
-int Game::keyboardInput()
+void Game::keyboardInput()
 {
     HandleInput :: updateKey();
     

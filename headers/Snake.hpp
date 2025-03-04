@@ -59,10 +59,13 @@ class Snake
     }
     
     bool bodyCollision ( )
-    {
+    {   bool result = false;
+
         for(int i = body.size() - 1; i > 0; i--)
             if(this->body.front().getPixelPositionX() == body[i].getPosition().getx() && this->body.front().getPixelPositionY() == body[i].getPosition().gety())
-                return true;
+                result = true;
+        
+        return result;
     }
 
     void init()
